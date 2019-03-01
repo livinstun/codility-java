@@ -38,7 +38,29 @@ class Solution {
     }
 }
 ```
-##4.3 MissingInteger
+## 2.2 CyclicRotation
+Rotate an array to the right by a given number of steps.
+
+class Solution {
+    public int[] solution(int[] A, int K) {
+        
+        int N = A.length;
+        if(N==0)
+            return A;
+        int rotate = K%N;
+        
+        int result[] = new int[A.length];
+        if(rotate!=0){
+            for(int i=0;i<A.length;i++){
+                result[(i+rotate)%N] = A[i];
+            }
+            return result;
+        }
+        return A;
+    }
+}
+
+## 4.3 MissingInteger
 Find the smallest positive integer that does not occur in a given sequence.
 
 ```
@@ -68,6 +90,7 @@ class Solution {
 Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current maximum.
 
 ```
+class Solution {
 public int[] solution(int N, int[] A) {
         int result[] = new int[N];
         Boolean isRepeatOccured = false;
@@ -98,4 +121,5 @@ public int[] solution(int N, int[] A) {
         }
         return result;
     }
+ }
 ```
