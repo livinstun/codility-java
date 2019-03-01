@@ -60,6 +60,21 @@ class Solution {
     }
 }
 
+## 3.1 FrogJmp
+Count minimal number of jumps from position X to Y.
+
+```
+import java.lang.Math;
+class Solution {
+    public int solution(int X, int Y, int D) {
+        if(X==Y)
+            return 0;
+        double N = (Y-X+D)/(double)D;
+        return (int)Math.ceil(N)-1;
+    }
+}
+```
+
 ## 4.3 MissingInteger
 Find the smallest positive integer that does not occur in a given sequence.
 
