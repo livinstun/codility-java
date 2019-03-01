@@ -24,7 +24,7 @@ class Solution {
 }
 ```
 
-##2. OddOccurrencesInArray
+## 2. OddOccurrencesInArray
 Find value that occurs in odd number of elements.
 
 ```
@@ -37,4 +37,40 @@ class Solution {
         return xor;
     }
 }
+```
+
+## 3.1. MaxCounters
+Calculate the values of counters after applying all alternating operations: increase counter by 1; set value of all counters to current maximum.
+
+```
+public int[] solution(int N, int[] A) {
+        int result[] = new int[N];
+        Boolean isRepeatOccured = false;
+        int max = 0,repeatmax=0;
+        for(int i=0;i<A.length;i++){
+            if(A[i]==N+1){
+                isRepeatOccured = true;
+                repeatmax = max;
+                continue;
+            }
+            
+            if(isRepeatOccured && repeatmax>result[A[i]-1]){
+                result[A[i]-1]= repeatmax+1;
+            }else{
+                result[A[i]-1]++;
+            }
+            
+            if(max<=result[A[i]-1]){
+                max = result[A[i]-1];
+            }
+        }
+        if(isRepeatOccured){
+            for(int i=0;i<N;i++){
+                if(result[i]<repeatmax){
+                    result[i]= repeatmax;
+                }
+            }
+        }
+        return result;
+    }
 ```
