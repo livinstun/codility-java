@@ -117,6 +117,26 @@ class Solution {
 }
 ```
 
+## 4.2 FrogRiverOne
+Find the earliest time when a frog can jump to the other side of a river.
+
+```
+import java.util.*;
+class Solution {
+    public int solution(int X, int[] A) {
+        
+        Set <Integer> set = new HashSet<Integer>();
+        for(int i = 0;i<A.length;i++){
+            set.add(A[i]);
+            if(set.size() == X){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+```
+
 ## 4.3 MissingInteger
 Find the smallest positive integer that does not occur in a given sequence.
 
