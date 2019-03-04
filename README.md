@@ -75,6 +75,23 @@ class Solution {
 }
 ```
 
+## 3.2 PermMissingElem
+Find the missing element in a given permutation.
+```
+class Solution {
+    public int solution(int[] A) {
+        long sum = 0;
+        long n = A.length+1;
+        long sumN = (n*(n+1))/2;
+        
+        for(int i=0;i<A.length;i++){
+            sum+= A[i];
+        }
+        return (int)(sumN-sum);
+    }
+}
+```
+
 ## 4.3 MissingInteger
 Find the smallest positive integer that does not occur in a given sequence.
 
