@@ -40,7 +40,7 @@ class Solution {
 ```
 ## 2.2 CyclicRotation
 Rotate an array to the right by a given number of steps.
-
+```
 class Solution {
     public int[] solution(int[] A, int K) {
         
@@ -59,6 +59,7 @@ class Solution {
         return A;
     }
 }
+```
 
 ## 3.1 FrogJmp
 Count minimal number of jumps from position X to Y.
