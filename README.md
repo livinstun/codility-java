@@ -117,6 +117,31 @@ class Solution {
     }
 }
 ```
+## 3.3 TapeEquilibrium
+Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
+
+```
+import java.lang.Math;
+class Solution {
+    public int solution(int[] A) {
+        int totalsum = 0,currentsum = 0;
+        for(int i = 0;i<A.length;i++){
+            totalsum += A[i];
+        }
+        int min = Integer.MAX_VALUE;
+        for(int i=0;i<A.length-1;i++){
+            currentsum = currentsum+A[i];
+            int leftsum = currentsum;
+            int rightsum = totalsum-leftsum;
+            int diff = Math.abs(rightsum-leftsum);
+            if(diff<min){
+                min = diff;
+            }
+        }
+        return min;
+    }
+}
+```
 
 ## 4.2 FrogRiverOne
 Find the earliest time when a frog can jump to the other side of a river.
