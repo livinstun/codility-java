@@ -228,3 +228,25 @@ public int[] solution(int N, int[] A) {
     }
  }
 ```
+
+## 5.1 PassingCars
+Count the number of passing cars on the road.
+```
+class Solution {
+    public int solution(int[] A) {
+        long cross = 0;
+        long tempCross = 0;
+        for(int i=A.length-1;i>=0;i--){
+            if(A[i]== 1)
+                tempCross++;
+            else{
+                cross+=tempCross;
+            }
+        }
+        if(cross >1000000000){
+            return -1;   
+        }
+        return (int)cross;
+    }
+}
+```
