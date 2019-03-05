@@ -92,31 +92,7 @@ class Solution {
     }
 }
 ```
-## 4.1 PermCheck
-Check whether array A is a permutation.
 
-```
-import java.util.*;
-class Solution {
-    public int solution(int[] A) {
-        // write your code in Java SE 8
-        long sum = 0,n = A.length;
-        long sumN = (n*(n+1))/2;
-        long largest = 0;
-        HashSet<Integer> set = new HashSet<Integer>();
-        for(int i=0;i<n;i++){
-            sum+=A[i];
-            set.add(A[i]);
-            if(largest<A[i])
-                largest = A[i];
-        }
-
-        if(sum == sumN && set.size() == n && largest == n)
-            return 1;
-        return 0;
-    }
-}
-```
 ## 3.3 TapeEquilibrium
 Minimize the value |(A[0] + ... + A[P-1]) - (A[P] + ... + A[N-1])|.
 
@@ -139,6 +115,32 @@ class Solution {
             }
         }
         return min;
+    }
+}
+```
+
+## 4.1 PermCheck
+Check whether array A is a permutation.
+
+```
+import java.util.*;
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+        long sum = 0,n = A.length;
+        long sumN = (n*(n+1))/2;
+        long largest = 0;
+        HashSet<Integer> set = new HashSet<Integer>();
+        for(int i=0;i<n;i++){
+            sum+=A[i];
+            set.add(A[i]);
+            if(largest<A[i])
+                largest = A[i];
+        }
+
+        if(sum == sumN && set.size() == n && largest == n)
+            return 1;
+        return 0;
     }
 }
 ```
